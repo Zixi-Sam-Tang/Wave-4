@@ -1,13 +1,14 @@
 def piglatin(word):
-    temp = ""
-    vowels = ["a", "e", "i", "o", "u", "y"]
-    if word[0] not in vowels:
-        for i in range(1, len(word)):
-            if word[i] in vowels:
-                temp = word[i:len(word)] + word[0:i] + "ay"
-                break
-    else:
-        temp = word + "way"
-    return temp
-word = str(input("Input word: "))
-print(piglatin(word))
+    for j in word:
+        temp = ""
+        vowels = ["a", "e", "i", "o", "u", "y"]
+        if j[0] not in vowels:
+            for i in range(1, len(j)):
+                if j[i] in vowels:
+                    temp = j[i:len(j)] + j[0:i] + "ay"
+                    break
+        else:
+            temp = j + "way"
+        print(temp, end = " ")
+word = str(input("Input word: ")).split(" ")
+piglatin(word)
